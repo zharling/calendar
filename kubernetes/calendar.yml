@@ -1,0 +1,17 @@
+---
+ apiVersion: v1
+ kind: Pod
+ metadata:
+   name: java-calendar
+   labels:
+     app: web
+ spec:
+   containers:
+     - name: httpd
+       image: registry.hub.docker.com/zharling/httpd
+       ports:
+         - containerPort: 80
+     - name: tomcat
+       image: registry.hub.docker.com/zharling/tomcat
+       ports:
+         - containerPort: 8009
